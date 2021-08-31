@@ -1,0 +1,8 @@
+{
+  "realm": "lagalt",
+  "auth-server-url": "http://localhost:8081/auth/",
+  "ssl-required": "external",
+  "resource": "lagalt-react",
+  "public-client": true,
+  "confidential-port": 0
+}
