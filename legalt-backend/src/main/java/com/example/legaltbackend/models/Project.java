@@ -1,4 +1,4 @@
-package models;
+package com.example.legaltbackend.models;
 
 import javax.persistence.*;
 
