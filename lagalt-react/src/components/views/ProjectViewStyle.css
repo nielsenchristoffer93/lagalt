@@ -1,5 +1,5 @@
 .projectList{
-    width: 50%;
+    width: 70%;
     
     margin-left:auto;
     margin-right: auto;
@@ -19,4 +19,21 @@
 
 .projectComponent > img{
 width: 100%;
+}
+
+ul.horizontal-list {
+	min-width: 696px;
+	list-style: none;
+	padding-top: 20px;
+	}
+
+ul.horizontal-list li {
+    display: inline;
+}
+
+.searchContainer{
+    border: solid black 1px;
+    padding: 20px;
+    margin: 15px 0px;
+    border-radius: 10px;
 }
