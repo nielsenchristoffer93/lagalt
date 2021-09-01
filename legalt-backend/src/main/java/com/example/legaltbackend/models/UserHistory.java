@@ -10,10 +10,11 @@ public class UserHistory {
     private Long id;
 
     @Column(nullable = false)
-    private String userId;
-
-    @Column(nullable = false)
     private String projectId;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    public Users user;
 
     public Long getId() {
         return id;
@@ -21,14 +22,6 @@ public class UserHistory {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
     }
 
     public String getProjectId() {

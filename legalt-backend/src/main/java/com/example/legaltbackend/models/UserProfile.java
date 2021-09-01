@@ -10,8 +10,6 @@ public class UserProfile {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
-    private Long userId;
 
     @Column(nullable = false)
     private String description;
@@ -32,20 +30,16 @@ public class UserProfile {
     )
     public List<ProjectApplications> projectApplications;
 
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private  Users user;
+
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
     }
 
     public String getDescription() {

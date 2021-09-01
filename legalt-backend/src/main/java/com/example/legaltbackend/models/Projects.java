@@ -20,6 +20,14 @@ public class Projects {
 
     @ManyToMany
     @JoinTable(
+            name = "users_projects",
+            joinColumns = {@JoinColumn(name = "user_id")},
+            inverseJoinColumns = {@JoinColumn(name = "project_id")}
+    )
+    public List<Users> users;
+
+    @ManyToMany
+    @JoinTable(
             name = "projects_tags",
             joinColumns = {@JoinColumn(name = "project_id")},
             inverseJoinColumns = {@JoinColumn(name = "project_tag_id")}
