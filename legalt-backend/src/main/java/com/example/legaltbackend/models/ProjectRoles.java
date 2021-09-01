@@ -10,6 +10,10 @@ public class ProjectRoles {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "role_id", referencedColumnName = "id")
+    private  Roles role;
+
     @Column(nullable = false)
     private Long projectId;
 

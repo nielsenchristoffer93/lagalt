@@ -12,6 +12,12 @@ public class Roles {
     @Column(nullable = false)
     private String title;
 
+    @OneToOne(mappedBy = "role")
+    private ProjectRoles projectRole;
+
+
+
+
     public Long getId() {
         return id;
     }

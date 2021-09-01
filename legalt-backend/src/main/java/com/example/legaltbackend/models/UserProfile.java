@@ -1,6 +1,7 @@
 package com.example.legaltbackend.models;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class UserProfile {
@@ -14,6 +15,22 @@ public class UserProfile {
 
     @Column(nullable = false)
     private String description;
+
+    @ManyToMany
+    @JoinTable(
+            name = "user_profile_skills",
+            joinColumns = {@JoinColumn(name = "user_profile_id")},
+            inverseJoinColumns = {@JoinColumn(name = "skill_id")}
+    )
+    public List<Skills> skills;
+
+    @ManyToMany
+    @JoinTable(
+            name = "user_applications",
+            joinColumns = {@JoinColumn(name = "project_application_id")},
+            inverseJoinColumns = {@JoinColumn(name = "user_profile_id")}
+    )
+    public List<ProjectApplications> projectApplications;
 
     public Long getId() {
         return id;

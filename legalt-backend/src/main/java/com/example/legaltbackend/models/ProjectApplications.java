@@ -2,6 +2,7 @@
 package com.example.legaltbackend.models;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class ProjectApplications {
@@ -10,11 +11,23 @@ public class ProjectApplications {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
-    private Long userProfileId;
+    @ManyToMany
+    @JoinTable(
+            name = "user_applications",
+            joinColumns = {@JoinColumn(name = "user_profile_id")},
+            inverseJoinColumns = {@JoinColumn(name = "project_application_id")}
+    )
+    public List<UserProfile> userProfiles;
 
-    @Column(nullable = false)
-    private Long projectId;
+
+    @ManyToMany
+    @JoinTable(
+            name = "projects_applications",
+            joinColumns = {@JoinColumn(name = "project_application_id")},
+            inverseJoinColumns = {@JoinColumn(name = "project_id")}
+    )
+    public List<Projects> projects;
+
 
     @Column(nullable = false)
     private String motivation;
@@ -27,21 +40,6 @@ public class ProjectApplications {
         this.id = id;
     }
 
-    public Long getUserProfileId() {
-        return userProfileId;
-    }
-
-    public void setUserProfileId(Long userProfileId) {
-        this.userProfileId = userProfileId;
-    }
-
-    public Long getProjectId() {
-        return projectId;
-    }
-
-    public void setProjectId(Long projectId) {
-        this.projectId = projectId;
-    }
 
     public String getMotivation() {
         return motivation;
