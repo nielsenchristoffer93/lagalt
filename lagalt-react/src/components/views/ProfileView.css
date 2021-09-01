@@ -1,0 +1,28 @@
+.profile-container {
+    margin: 20px;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+
+    border: 2px solid grey;
+    border-radius: 10px;
+}
+.name-container {
+    margin-top: 10px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.profile-portfolio {
+    margin-top: 20px;
+
+    display: flex;
+    flex-direction: column;
+}
+.profile-portfolio-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
