@@ -31,6 +31,11 @@ public class Skills {
     public List<UserProfile> userProfiles;
 
 
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    public Categories category;
+
+
     public Long getId() {
         return id;
     }

@@ -1,6 +1,7 @@
 package com.example.legaltbackend.models;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Categories {
@@ -11,6 +12,9 @@ public class Categories {
 
     @Column(nullable = false)
     private String title;
+
+    @OneToMany(mappedBy = "category")
+    public List<Skills> skills;
 
     public Long getId() {
         return id;

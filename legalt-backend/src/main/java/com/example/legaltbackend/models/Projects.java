@@ -42,7 +42,9 @@ public class Projects {
     )
     public List<ProjectApplications> projectApplications;
 
-
+    @OneToOne
+    @JoinColumn(name = "project_status_id")
+    private  ProjectStatus projectStatus;
 
 
     public Long getId() {

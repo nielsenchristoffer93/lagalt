@@ -10,8 +10,8 @@ public class ProjectRoles {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "role_id", referencedColumnName = "id")
+    @OneToOne
+    @JoinColumn(name = "role_id")
     private  Roles role;
 
     @Column(nullable = false)
@@ -20,8 +20,7 @@ public class ProjectRoles {
     @Column(nullable = false)
     private Long userId;
 
-    @Column(nullable = false)
-    private Long roleId;
+
 
 
 }

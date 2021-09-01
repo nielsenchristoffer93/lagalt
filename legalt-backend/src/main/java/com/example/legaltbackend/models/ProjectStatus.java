@@ -9,6 +9,12 @@ public class ProjectStatus {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false)
+    private String title;
+
+    @OneToOne(mappedBy = "projectStatus")
+    private Projects project;
+
     public Long getId() {
         return id;
     }
@@ -25,7 +31,6 @@ public class ProjectStatus {
         this.title = title;
     }
 
-    @Column(nullable = false)
-    private String title;
+
 
 }
