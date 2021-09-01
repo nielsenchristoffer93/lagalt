@@ -3,7 +3,7 @@ package com.example.legaltbackend.models;
 import javax.persistence.*;
 
 @Entity
-public class Project {
+public class Projects {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
