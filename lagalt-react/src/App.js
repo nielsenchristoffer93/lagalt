@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
-import Welcome from './Welcome';
+import Welcome from './components/views/ProjectView';
 import Secured from './Secured';
 import './App.css';
 

@@ -1,6 +1,4 @@
 import { useEffect, useState } from 'react'
-import ProjectComponent from './ProjectComponent'
-import './ProjectViewStyle.css'
 
 const ProjectView = () => {
 
