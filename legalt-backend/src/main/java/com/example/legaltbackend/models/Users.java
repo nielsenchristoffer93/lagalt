@@ -10,7 +10,6 @@ public class Users {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
     @Column(nullable = false)
     private String username;
 
@@ -27,6 +26,15 @@ public class Users {
 
     @OneToOne(mappedBy = "user")
     private UserProfile userProfile;
+
+    @OneToOne(mappedBy = "user")
+    private ProjectRoles projectRole;
+
+    @OneToMany(mappedBy = "user")
+    private List<Messages> messages;
+
+    @OneToMany(mappedBy = "user")
+    private List<ChatMessages> chatMessages;
 
     public Long getId() {
         return id;
@@ -66,5 +74,13 @@ public class Users {
 
     public void setUserProfile(UserProfile userProfile) {
         this.userProfile = userProfile;
+    }
+
+    public ProjectRoles getProjectRole() {
+        return projectRole;
+    }
+
+    public void setProjectRole(ProjectRoles projectRole) {
+        this.projectRole = projectRole;
     }
 }

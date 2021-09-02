@@ -3,7 +3,7 @@ package com.example.legaltbackend.models;
 import javax.persistence.*;
 
 @Entity
-public class ChatMessages {
+public class Messages {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,6 +20,7 @@ public class ChatMessages {
     public Users user;
 
     @ManyToOne
-    @JoinColumn(name = "chat_board_id")
-    public ChatBoard chatBoard;
+    @JoinColumn(name = "message_board_id")
+    public MessageBoard messageBoard;
+
 }

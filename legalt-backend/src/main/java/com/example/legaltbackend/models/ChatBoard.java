@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-public class MessageBoard {
+public class ChatBoard {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -12,10 +12,11 @@ public class MessageBoard {
 
     @OneToOne
     @JoinColumn(name = "project_id")
-    private  Projects project;
+    private Projects project;
 
-    @OneToMany(mappedBy = "messageBoard")
-    private List<Messages> messages;
+
+    @OneToMany(mappedBy = "chatBoard")
+    private List<ChatMessages> chatMessages;
 
     public Long getId() {
         return id;
