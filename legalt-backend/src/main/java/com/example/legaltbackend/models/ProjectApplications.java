@@ -1,4 +1,3 @@
-
 package com.example.legaltbackend.models;
 
 import javax.persistence.*;
@@ -19,7 +18,6 @@ public class ProjectApplications {
     )
     public List<UserProfile> userProfiles;
 
-
     @ManyToMany
     @JoinTable(
             name = "projects_applications",
@@ -27,7 +25,6 @@ public class ProjectApplications {
             inverseJoinColumns = {@JoinColumn(name = "project_id")}
     )
     public List<Projects> projects;
-
 
     @Column(nullable = false)
     private String motivation;
@@ -40,7 +37,6 @@ public class ProjectApplications {
         this.id = id;
     }
 
-
     public String getMotivation() {
         return motivation;
     }
@@ -49,6 +45,19 @@ public class ProjectApplications {
         this.motivation = motivation;
     }
 
+    public List<UserProfile> getUserProfiles() {
+        return userProfiles;
+    }
 
+    public void setUserProfiles(List<UserProfile> userProfiles) {
+        this.userProfiles = userProfiles;
+    }
 
+    public List<Projects> getProjects() {
+        return projects;
+    }
+
+    public void setProjects(List<Projects> projects) {
+        this.projects = projects;
+    }
 }

@@ -15,9 +15,6 @@ public class Roles {
     @OneToOne(mappedBy = "role")
     private ProjectRoles projectRole;
 
-
-
-
     public Long getId() {
         return id;
     }
@@ -32,5 +29,13 @@ public class Roles {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public ProjectRoles getProjectRole() {
+        return projectRole;
+    }
+
+    public void setProjectRole(ProjectRoles projectRole) {
+        this.projectRole = projectRole;
     }
 }

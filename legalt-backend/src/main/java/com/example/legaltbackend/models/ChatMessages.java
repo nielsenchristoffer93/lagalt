@@ -60,8 +60,4 @@ public class ChatMessages {
     public void setTimestamp(String timestamp) {
         this.timestamp = timestamp;
     }
-
-
-
-
 }

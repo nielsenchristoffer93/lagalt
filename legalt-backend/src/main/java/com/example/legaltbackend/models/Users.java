@@ -6,7 +6,6 @@ import java.util.List;
 @Entity
 public class Users {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -45,4 +44,27 @@ public class Users {
         this.username = username;
     }
 
+    public List<Projects> getProjects() {
+        return projects;
+    }
+
+    public void setProjects(List<Projects> projects) {
+        this.projects = projects;
+    }
+
+    public List<UserHistory> getUserHistoryList() {
+        return userHistoryList;
+    }
+
+    public void setUserHistoryList(List<UserHistory> userHistoryList) {
+        this.userHistoryList = userHistoryList;
+    }
+
+    public UserProfile getUserProfile() {
+        return userProfile;
+    }
+
+    public void setUserProfile(UserProfile userProfile) {
+        this.userProfile = userProfile;
+    }
 }

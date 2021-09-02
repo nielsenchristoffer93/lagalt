@@ -16,6 +16,14 @@ public class Categories {
     @OneToMany(mappedBy = "category")
     public List<Skills> skills;
 
+    public List<Skills> getSkills() {
+        return skills;
+    }
+
+    public void setSkills(List<Skills> skills) {
+        this.skills = skills;
+    }
+
     public Long getId() {
         return id;
     }

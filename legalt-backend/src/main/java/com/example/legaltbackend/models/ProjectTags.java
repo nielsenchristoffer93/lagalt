@@ -10,9 +10,6 @@ public class ProjectTags {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
-    //    @Column(nullable = false)
-//    private Long projectId;
     @ManyToMany
     @JoinTable(
             name = "projects_tags",
@@ -31,14 +28,6 @@ public class ProjectTags {
     public void setId(Long id) {
         this.id = id;
     }
-
-//    public Long getProjectId() {
-//        return projectId;
-//    }
-//
-//    public void setProjectId(Long projectId) {
-//        this.projectId = projectId;
-//    }
 
     public String getTag() {
         return tag;

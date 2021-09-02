@@ -13,7 +13,6 @@ public class Skills {
     @Column(nullable = false)
     private String title;
 
-
     @ManyToMany
     @JoinTable(
             name = "project_skills",
@@ -30,11 +29,9 @@ public class Skills {
     )
     public List<UserProfile> userProfiles;
 
-
     @ManyToOne
     @JoinColumn(name = "category_id")
     public Categories category;
-
 
     public Long getId() {
         return id;
@@ -50,5 +47,29 @@ public class Skills {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public List<Projects> getProjects() {
+        return projects;
+    }
+
+    public void setProjects(List<Projects> projects) {
+        this.projects = projects;
+    }
+
+    public List<UserProfile> getUserProfiles() {
+        return userProfiles;
+    }
+
+    public void setUserProfiles(List<UserProfile> userProfiles) {
+        this.userProfiles = userProfiles;
+    }
+
+    public Categories getCategory() {
+        return category;
+    }
+
+    public void setCategory(Categories category) {
+        this.category = category;
     }
 }

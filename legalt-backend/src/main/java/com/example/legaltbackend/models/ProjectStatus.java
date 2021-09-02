@@ -31,6 +31,11 @@ public class ProjectStatus {
         this.title = title;
     }
 
+    public Projects getProject() {
+        return project;
+    }
 
-
+    public void setProject(Projects project) {
+        this.project = project;
+    }
 }
