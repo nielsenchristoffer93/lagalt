@@ -1,6 +1,7 @@
 package com.example.legaltbackend.models;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -16,7 +17,12 @@ public class Projects {
     @Column(nullable = false, columnDefinition = "TEXT")
     private String description;
 
+    @Column(nullable = true)
     private byte[] image;
+
+    @Column(nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date createdDate;
 
     @ManyToMany
     @JoinTable(
@@ -50,9 +56,30 @@ public class Projects {
     )
     public List<ProjectApplications> projectApplications;
 
-    @OneToOne
-    @JoinColumn(name = "project_status_id")
-    private  ProjectStatus projectStatus;
+    @ManyToMany
+    @JoinTable(
+            name = "projects_user_history",
+            joinColumns = {@JoinColumn(name = "project_id")},
+            inverseJoinColumns = {@JoinColumn(name = "user_history_id")}
+    )
+    public List<UserHistory> userHistoryList;
+
+    @ManyToMany
+    @JoinTable(
+            name = "projects_roles",
+            joinColumns = {@JoinColumn(name = "project_id")},
+            inverseJoinColumns = {@JoinColumn(name = "project_roles_id")}
+    )
+    public List<ProjectRoles> projectRoles;
+
+    @OneToOne(mappedBy = "project")
+    private ProjectStatus projectStatus;
+
+    @OneToOne(mappedBy = "project")
+    private MessageBoard messageBoard;
+
+    @OneToOne(mappedBy = "project")
+    private ChatBoard chatBoard;
 
     public Long getId() {
         return id;

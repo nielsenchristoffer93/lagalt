@@ -12,8 +12,10 @@ public class ProjectStatus {
     @Column(nullable = false)
     private String title;
 
-    @OneToOne(mappedBy = "projectStatus")
-    private Projects project;
+    @OneToOne
+    @JoinColumn(name = "project_id")
+    private  Projects project;
+
 
     public Long getId() {
         return id;

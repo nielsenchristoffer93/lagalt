@@ -1,6 +1,7 @@
 package com.example.legaltbackend.models;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class UserHistory {
@@ -15,6 +16,14 @@ public class UserHistory {
     @ManyToOne
     @JoinColumn(name = "user_id")
     public Users user;
+
+    @ManyToMany
+    @JoinTable(
+            name = "projects_user_history",
+            joinColumns = {@JoinColumn(name = "user_history_id")},
+            inverseJoinColumns = {@JoinColumn(name = "project_id")}
+    )
+    public List<Projects> projects;
 
     public Long getId() {
         return id;
