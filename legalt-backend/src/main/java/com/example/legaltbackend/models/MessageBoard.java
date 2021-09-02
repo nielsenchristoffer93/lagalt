@@ -1,4 +1,3 @@
-
 package com.example.legaltbackend.models;
 
 import javax.persistence.*;
@@ -61,8 +60,4 @@ public class MessageBoard {
     public void setTimestamp(String timestamp) {
         this.timestamp = timestamp;
     }
-
-
-
-
 }

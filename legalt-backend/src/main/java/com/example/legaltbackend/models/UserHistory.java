@@ -31,4 +31,12 @@ public class UserHistory {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
+
+    public Users getUser() {
+        return user;
+    }
+
+    public void setUser(Users user) {
+        this.user = user;
+    }
 }

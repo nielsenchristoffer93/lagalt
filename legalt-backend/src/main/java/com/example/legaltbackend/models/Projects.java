@@ -54,7 +54,6 @@ public class Projects {
     @JoinColumn(name = "project_status_id")
     private  ProjectStatus projectStatus;
 
-
     public Long getId() {
         return id;
     }
@@ -85,5 +84,45 @@ public class Projects {
 
     public void setImage(byte[] image) {
         this.image = image;
+    }
+
+    public List<Users> getUsers() {
+        return users;
+    }
+
+    public void setUsers(List<Users> users) {
+        this.users = users;
+    }
+
+    public List<ProjectTags> getProjectTags() {
+        return projectTags;
+    }
+
+    public void setProjectTags(List<ProjectTags> projectTags) {
+        this.projectTags = projectTags;
+    }
+
+    public List<Skills> getSkills() {
+        return skills;
+    }
+
+    public void setSkills(List<Skills> skills) {
+        this.skills = skills;
+    }
+
+    public List<ProjectApplications> getProjectApplications() {
+        return projectApplications;
+    }
+
+    public void setProjectApplications(List<ProjectApplications> projectApplications) {
+        this.projectApplications = projectApplications;
+    }
+
+    public ProjectStatus getProjectStatus() {
+        return projectStatus;
+    }
+
+    public void setProjectStatus(ProjectStatus projectStatus) {
+        this.projectStatus = projectStatus;
     }
 }

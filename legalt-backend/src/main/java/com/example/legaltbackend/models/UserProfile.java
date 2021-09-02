@@ -10,6 +10,11 @@ public class UserProfile {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false)
+    private String portfolio;
+
+    @Column(nullable = false)
+    private Boolean isHidden;
 
     @Column(nullable = false)
     private String description;
@@ -66,15 +71,27 @@ public class UserProfile {
         isHidden = hidden;
     }
 
-    @Column(nullable = false)
-    private String portfolio;
+    public List<Skills> getSkills() {
+        return skills;
+    }
 
-    /*@Column(nullable = false)
-    private String userImage;
-    **/
+    public void setSkills(List<Skills> skills) {
+        this.skills = skills;
+    }
 
-    @Column(nullable = false)
-    private Boolean isHidden;
+    public List<ProjectApplications> getProjectApplications() {
+        return projectApplications;
+    }
 
+    public void setProjectApplications(List<ProjectApplications> projectApplications) {
+        this.projectApplications = projectApplications;
+    }
 
+    public Users getUser() {
+        return user;
+    }
+
+    public void setUser(Users user) {
+        this.user = user;
+    }
 }
