@@ -3,7 +3,7 @@ package com.example.legaltbackend.models;
 import javax.persistence.*;
 
 @Entity
-public class Project {
+public class Roles {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -12,10 +12,8 @@ public class Project {
     @Column(nullable = false)
     private String title;
 
-    @Column(nullable = false, columnDefinition = "TEXT")
-    private String description;
-
-    private byte[] image;
+    @OneToOne(mappedBy = "role")
+    private ProjectRoles projectRole;
 
     public Long getId() {
         return id;
@@ -33,19 +31,11 @@ public class Project {
         this.title = title;
     }
 
-    public String getDescription() {
-        return description;
+    public ProjectRoles getProjectRole() {
+        return projectRole;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public byte[] getImage() {
-        return image;
-    }
-
-    public void setImage(byte[] image) {
-        this.image = image;
+    public void setProjectRole(ProjectRoles projectRole) {
+        this.projectRole = projectRole;
     }
 }
